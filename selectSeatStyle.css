@@ -1,0 +1,63 @@
+body {
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  font-family: Apple SD Gothic Neo;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.screen{
+  margin: 0 auto;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+.selectSeat{
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.selectSeat label{
+  margin: 9.5px;
+  font-size: 10px;
+  border-radius: 5px;
+
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectSeat input{
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectSeat button {
+  margin: 6px;
+  padding: 5px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+
+h2 {
+  margin: 0 auto;
+  font-family: Apple SD Gothic Neo;
+}

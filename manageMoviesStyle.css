@@ -1,0 +1,49 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectionsNav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.selectionsNav a {
+  padding-left: 10px;
+  font-size: 20px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.mainContent {
+  margin-left: 200px;
+}
+
+.addMovie {
+  margin: 0 auto;
+}
+
+.deleteMovie {
+  margin: 0 auto;
+}
+
+.updateMovie {
+  margin: 0 auto;
+}

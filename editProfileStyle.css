@@ -1,0 +1,49 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  font-family: Apple SD Gothic Neo;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.editProfile{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.editProfile input{
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+.editProfile button {
+  margin: 5px;
+  padding: 5px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+
+h2 {
+  margin: 0 auto;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}

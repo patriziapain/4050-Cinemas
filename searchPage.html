@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Search Results</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="searchPageStyle.css">
+  </head>
+
+  <body>
+    <div class="topHeader">
+
+      <div class="home">
+          <a href="homePage.html">Home</a>
+      </div>
+
+      <div class="search">
+        <input type="text" name="searchQuery" value="Search...">
+        <label for="filter">Filter Search:</label>
+        <select name="filter">
+          <option value="title">Title</option>
+          <option value="category">Category</option>
+          <option value="showDate">Show Date</option>
+        </select>
+        <button type="submit" value="submitSearch">Enter</button>
+      </div>
+
+      <div class="login">
+        <label for="username">Username: </label>
+        <input type="text" name="username"><br>
+        <label for="password">Password: </label>
+        <input type="password" name="password"><br>
+        <input type="checkbox" name="rememberMe">
+        <label for="rememberMe">Remember Me</label><br>
+        <form action="signedInSearch.html">
+          <button type="submit" value="login">Login</button>
+        </form>
+        <form action="signup.html">
+          <button type="submit" value="signup">Sign Up</button><br>
+        </form>
+      </div>
+    </div>
+
+    <div class="header">Search results for [insert searchQuery]</div>
+
+    <div class="body">
+      <div class="row1">
+        <div class="movie1">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie1"><br>
+          </a>
+        </div>
+        <div class="movie2">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie2">
+          </a>
+        </div>
+        <div class="movie3">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie3">
+          </a>
+        </div>
+        <div class="movie4">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie4">
+          </a>
+        </div>
+      </div><br>
+
+      <div class="row2">
+        <div class="movie5">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie5">
+          </a>
+        </div>
+        <div class="movie6">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie6">
+          </a>
+        </div>
+        <div class="movie7">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie7">
+          </a>
+        </div>
+        <div class="movie8">
+          <a href="movieInfoPage.html">
+            <img src="tree.jpg" alt="movie8">
+          </a>
+        </div>
+      </div>
+
+  </body>
+</html>

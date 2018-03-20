@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <title>Checkout</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="checkoutStyle.css">
+  </head>
+
+  <body>
+
+    <div class="home">
+      <a href="signedInHome.html">Home</a>
+    </div>
+
+    <div class="header">Checkout Your Tickets</div><br>
+
+    <div class="checkoutForm">
+
+      <h2>1. Payment Method</h2><br>
+      <input type="text" name="nameOnCard" value="Name On Card" size="20"><br>
+      <input type="text" name="creditCardNum" value="Credit Card Number" size="20"><br>
+      <input type="text" name="expirationDate" value="Exp" size="5">
+      <input type="text" name="securityCode" value="CCV" size=10;><br>
+      <input type="checkbox" ID="usePrevious" name="previousInfo">
+      <label for="usePrevious">Use Previous Information</label><br><br>
+
+
+      <h2>2. Billing Address</h2><br>
+      <input type="text" name="address1" value="Address Line 1*" size="40"><br>
+      <input type="text" name="address2" value="Address Line 2" size="40"><br>
+      <input type="text" name="city" value="City*" size="15">
+      <input type="text" name="state" value="State*" size="15">
+      <input type="text" name="zipCode" value="Zip Code*" size="10"><br>
+
+      <input type="checkbox" ID="usePrevious" name="previousInfo">
+      <label for="usePrevious">Use Previous Information</label><br><br>
+
+      <h2>3. Review Your Order</h2><br>
+      <label>Customer Name</label><br>
+      <label>Movie Name: Number of Tickets</label><br>
+      <label>Price Paid, Last four digits of credit card</label><br><br>
+
+      <form action="thankYou.html">
+        <button type="submit" value="placeOrder">Place Order!</button>
+      </form>
+      <form action="signedInHome.html">
+        <button type"submit" value="cancelOrder">Cancel Order</button>
+      </form>
+    </div>
+  </body>
+
+  </html>

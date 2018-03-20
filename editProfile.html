@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Edit Profile</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="editProfileStyle.css">
+  </head>
+
+  <body>
+
+    <div class="home">
+      <a href="signedInHome.html">Home</a>
+    </div>
+
+    <div class="header">Edit Your Profile</div>
+
+    <div class="editProfile">
+
+
+      <br><br><h2>1. Edit User Information</h2><br>
+      <input type="text" name="firstName" value="First Name" size="20">
+      <input type="text" name="lastName" value="Last Name" size="20"><br>
+      <input type="text" name="username" value="Username" size="20">
+      <input type="text" name="password" value="Password" size="20"><br>
+      <input type="text" name="email" value="Email Address" size="42"><br>
+
+
+      <br><br><h2>2. Edit Card Information</h2><br>
+      <input type="text" name="nameOnCard" value="Name On Card" size="20"><br>
+      <input type="text" name="creditCardNum" value="Credit Card Number" size="20"><br>
+      <input type="text" name="expirationDate" value="Exp. Date" size="8">
+      <input type="text" name="securityCode" value="CCV" size=10;><br>
+      <input type="text" name="billingAddress" value="Billing Address" size="40"><br>
+      <!--<input type="checkbox" ID="usePrevious" name="previousInfo">-->
+      <!--<label for="usePrevious">Use Previous Information</label><br><br>-->
+
+      <form action="userInfo.html" id="userPageForm"></form>
+      <br><button type="submit" form="userPageForm" value="saveChanges">Save Changes</button>
+    </div>
+
+  </body>
+
+  </html>

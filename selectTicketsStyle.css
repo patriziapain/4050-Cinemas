@@ -1,0 +1,50 @@
+body {
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  font-family: Apple SD Gothic Neo;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectTickets{
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+}
+
+.selectTickets label{
+  margin: 9.5px;
+  font-size: 15px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectTickets select{
+  margin: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}
+
+.selectTickets button {
+  margin: 6px;
+  padding: 5px;
+  width: 150px;
+  font-size: 20px;
+  border-radius: 5px;
+  font-family: Apple SD Gothic Neo;
+}

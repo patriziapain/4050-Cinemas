@@ -1,0 +1,32 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.thanksMessage {
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}

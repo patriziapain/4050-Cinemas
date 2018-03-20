@@ -1,0 +1,114 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.topHeader {
+  display: flex;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.search {
+  padding: 5px;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.search input {
+  padding: 5px;
+}
+
+.login {
+  padding: 5px;
+  aling-items: right;
+  justify-content: right;
+  text-align: right;
+  position:absolute;
+  top:5;
+  right:0;
+}
+
+.login input {
+  padding: 5px;
+}
+
+.login label {
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+form {
+  display: inline;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.nowPlayingHead {
+  text-align: left;
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.nowPlayingMovies {
+  padding: 10px;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  align-items: left;
+  justify-content: left;
+  font-size: 30px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.comingSoonMovies {
+  padding: 10px;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  align-items: left;
+  justify-content: left;
+  font-size: 30px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+
+}
+
+.comingSoonHead {
+  padding: 10px;
+  font-size: 30px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+img {
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+}
+
+.search label {
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}

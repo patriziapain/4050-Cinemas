@@ -1,0 +1,79 @@
+body {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.topHeader {
+  display: flex;
+}
+
+.home a {
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.search {
+  padding: 5px;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+}
+
+.search input {
+  padding: 5px;
+}
+
+.username {
+  padding: 5px;
+  text-align: right;
+  position:absolute;
+  top:0;
+  right:0;
+  font-weight: bold;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+form {
+  display: inline;
+}
+
+.login label {
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
+
+.row1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  padding: 20px;
+  height: 250px;
+  width: 250px;
+}
+
+.search label {
+  color: white;
+  font-family: Apple SD Gothic Neo;
+}
