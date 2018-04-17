@@ -1,0 +1,263 @@
+	
+
+	/*
+	 * Returns 1 if deleted, 0 if it doesn't exist
+	 */
+	public int deleteMovie(String title) {
+		String query = "DELETE "
+				+ "FROM Movie "
+				+ "WHERE title = ?";
+		
+		try {
+			
+			if((getMovieInfo(title)).getTitle().equals(""))
+				return 0;
+			ps=connection.prepareStatement(query);
+			ps.setString(1, title);
+			ps.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 1;
+	}//deleteMovie
+	
+	/*
+	 * MAKE THIS CREATE A MOVIE OBJECT
+	 */
+	public Movie getMovieInfo(String title) {
+		ResultSet rs = null;
+		
+		String genre="";
+		String cast="";
+		String director="";
+		String producer="";
+		String description="";
+		String trailerPicture="";
+		String trailerVideo="";
+		String rating="";
+		
+		String query = "SELECT * "
+					 + "FROM SE_Project.Movie "
+					 + "WHERE title = ?";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, title);
+			rs = ps.executeQuery();
+			
+			while(rs.next()){
+				title = rs.getString("title");
+				genre =rs.getString("genre");
+				cast = rs.getString("cast_list");
+				director = rs.getString("director");
+				producer = rs.getString("producer");
+				description = rs.getString("description");
+				trailerPicture = rs.getString("trailer_picture");
+				trailerVideo = rs.getString("trailer_video");
+				rating = rs.getString("rating");
+			} //while
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		Movie movie = new Movie(title, genre, cast, director, producer, description, trailerPicture, trailerVideo, rating);
+		return movie;
+		
+	}//getMovieInfo
+
+	public boolean isSeatAvailable(int hallId, int seatNumber) {
+		ResultSet rs = null;
+		boolean data = false;
+		String query = "SELECT available "
+				+ "FROM Seats "
+				+ "WHERE hall_id = ? AND seat_number = ?";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setInt(1, hallId);
+			ps.setInt(2, seatNumber);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				data = rs.getBoolean(1);
+				if (data == true)
+					System.out.println("Available");
+				else
+					System.out.println("Not available");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return data;
+	}//isSeatAvailable
+	
+	//available is true if you want to make the seat available, flase if it's being booked
+	public void updateSeatAvailability(int hallId, int seatNumber, boolean available) {
+		String query = "UPDATE Seats "
+				+ "SET available = ? "
+				+ "WHERE hall_id = ? AND seat_number = ?";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setBoolean(1, available);
+			ps.setInt(2, hallId);
+			ps.setInt(3, seatNumber);
+			ps.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}//updateSeatAvailability
+	
+	public void addPromotion(String promo_code, Date date, int discount) {
+		
+		String query = "INSERT INTO Promotion "
+				+ "(exp_date, promo_code, discount) "
+				+ "VALUES (?, ?, ?)";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setDate(1, date);
+			ps.setString(2, promo_code);
+			ps.setInt(3,  discount);
+			ps.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}//addPromotion
+	
+	
+	/*
+	 * Takes in the promo_code and initial price, returns the discounted price
+	 * If promo_code is invalid, returns 0.0
+	 */
+	public double applyPromotion(String promo_code, double price) {
+		ResultSet rs = null;
+		double discount = 0.0;
+		double data = 0.0;
+		
+		String query = "SELECT discount "
+				+ "FROM Promotion "
+				+ "WHERE promo_code = ?";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, promo_code);
+			rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				discount = rs.getInt(1);
+				discount = discount * 0.01;
+				data = price * (1.0 - discount);
+			}
+
+				
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return data;
+	}//applypromotion
+	
+	/*
+	 * Deletes a promotion, returns 1 if successful, 0 if promo didn't exist
+	 */
+	public int deletePromotion(String promo_code) {
+		String query = "DELETE "
+				+ "FROM Promotion "
+				+ "WHERE promo_code = ?";
+		
+		try {
+			
+			if(!promotionExists(promo_code))
+				return 0;
+			ps=connection.prepareStatement(query);
+			ps.setString(1, promo_code);
+			ps.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 1;
+	}//deletePromotion
+	
+	/*
+	 * Checks to see if the user input a valid email
+	 */
+	public boolean promotionExists(String promo_code) {
+		ResultSet rs = null;
+		String query = "SELECT * "
+				+ "FROM Promotion "
+				+ "WHERE promo_code = ?";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, promo_code);
+			rs = ps.executeQuery();
+			
+			if (rs.next())
+				return true;
+		} catch (SQLException e) {
+			System.out.println("Error: This promotion may not exist");
+			e.printStackTrace();
+		}
+		return false;
+	}//emailExists
+	
+	
+	
+	
+	public String encrypt(String plainText) {
+        String encryptedText = "";
+        try {
+            Cipher cipher   = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+            byte[] key      = "ABCDEFGHIJKLMNOP".getBytes("UTF-8");
+            SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
+            IvParameterSpec ivparameterspec = new IvParameterSpec(key);
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivparameterspec);
+            byte[] cipherText = cipher.doFinal(plainText.getBytes("UTF8"));
+            Base64.Encoder encoder = Base64.getEncoder();
+            encryptedText = encoder.encodeToString(cipherText);
+
+        } catch (Exception E) {
+             System.err.println("Encrypt Exception : "+E.getMessage());
+        }
+        return encryptedText;
+    }//encrypt
+	
+	public String decrypt(String encryptedText) {
+        String decryptedText = "";
+        try {
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+            byte[] key = "ABCDEFGHIJKLMNOP".getBytes("UTF-8");
+            SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
+            IvParameterSpec ivparameterspec = new IvParameterSpec(key);
+            cipher.init(Cipher.DECRYPT_MODE, secretKey, ivparameterspec);
+            Base64.Decoder decoder = Base64.getDecoder();
+            byte[] cipherText = decoder.decode(encryptedText.getBytes("UTF8"));
+            decryptedText = new String(cipher.doFinal(cipherText), "UTF-8");
+
+        } catch (Exception E) {
+            System.err.println("decrypt Exception : "+E.getMessage());
+        }
+        return decryptedText;
+    }
+	
+	public void addEmployee(String email, String password, String firstName, String lastName) {
+		String enc = encrypt(password);
+		String query = "INSERT INTO Users "
+				+ "(email, pass, first_name, last_name, rank) "
+				+ "VALUES(?, ?, ?, ?, 1)";
+		
+		try {
+			ps = connection.prepareStatement(query);
+			ps.setString(1, email);
+			ps.setString(2, enc);
+			ps.setString(3, firstName);
+			ps.setString(4, lastName);
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}//addEmployee
